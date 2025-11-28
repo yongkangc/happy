@@ -475,9 +475,9 @@ export const AgentInput = React.memo(React.forwardRef<MultiTextInputHandle, Agen
             if (e.key === 'm' && (e.metaKey || e.ctrlKey) && props.onModelModeChange) {
                 e.preventDefault();
                 const modelOrder: ModelMode[] = isCodex
-                    ? ['gpt-5-codex-high', 'gpt-5-codex-medium', 'gpt-5-codex-low', 'default']
+                    ? ['gpt-5.1-codex-max-xhigh', 'gpt-5.1-codex-max-high', 'gpt-5.1-codex-max-medium', 'gpt-5.1-codex-high', 'gpt-5.1-codex-medium', 'gpt-5.1-codex-low', 'gpt-5.1-codex-mini', 'default']
                     : ['default', 'adaptiveUsage', 'sonnet', 'opus'];
-                const currentIndex = modelOrder.indexOf(props.modelMode || (isCodex ? 'gpt-5-codex-high' : 'default'));
+                const currentIndex = modelOrder.indexOf(props.modelMode || (isCodex ? 'gpt-5.1-codex-max-high' : 'default'));
                 const nextIndex = (currentIndex + 1) % modelOrder.length;
                 props.onModelModeChange(modelOrder[nextIndex]);
                 hapticsLight();
@@ -616,19 +616,19 @@ export const AgentInput = React.memo(React.forwardRef<MultiTextInputHandle, Agen
                                     }}>
                                         {isCodex ? t('agentInput.codexModel.title') : t('agentInput.model.title')}
                                     </Text>
-                                    {(isCodex 
-                                        ? (['gpt-5-codex-high', 'gpt-5-codex-medium', 'gpt-5-codex-low', 'default', 'gpt-5-minimal', 'gpt-5-low', 'gpt-5-medium', 'gpt-5-high'] as const)
+                                    {(isCodex
+                                        ? (['gpt-5.1-codex-max-xhigh', 'gpt-5.1-codex-max-high', 'gpt-5.1-codex-max-medium', 'gpt-5.1-codex-high', 'gpt-5.1-codex-medium', 'gpt-5.1-codex-low', 'gpt-5.1-codex-mini', 'default'] as const)
                                         : (['default', 'adaptiveUsage', 'sonnet', 'opus'] as const)
                                     ).map((model) => {
                                         const modelConfig = isCodex ? {
-                                            'gpt-5-codex-high': { label: t('agentInput.codexModel.gpt5CodexHigh') },
-                                            'gpt-5-codex-medium': { label: t('agentInput.codexModel.gpt5CodexMedium') },
-                                            'gpt-5-codex-low': { label: t('agentInput.codexModel.gpt5CodexLow') },
+                                            'gpt-5.1-codex-max-xhigh': { label: t('agentInput.codexModel.gpt51CodexMaxXhigh') },
+                                            'gpt-5.1-codex-max-high': { label: t('agentInput.codexModel.gpt51CodexMaxHigh') },
+                                            'gpt-5.1-codex-max-medium': { label: t('agentInput.codexModel.gpt51CodexMaxMedium') },
+                                            'gpt-5.1-codex-high': { label: t('agentInput.codexModel.gpt51CodexHigh') },
+                                            'gpt-5.1-codex-medium': { label: t('agentInput.codexModel.gpt51CodexMedium') },
+                                            'gpt-5.1-codex-low': { label: t('agentInput.codexModel.gpt51CodexLow') },
+                                            'gpt-5.1-codex-mini': { label: t('agentInput.codexModel.gpt51CodexMini') },
                                             'default': { label: t('agentInput.model.default') },
-                                            'gpt-5-minimal': { label: t('agentInput.codexModel.gpt5Minimal') },
-                                            'gpt-5-low': { label: t('agentInput.codexModel.gpt5Low') },
-                                            'gpt-5-medium': { label: t('agentInput.codexModel.gpt5Medium') },
-                                            'gpt-5-high': { label: t('agentInput.codexModel.gpt5High') },
                                         } : {
                                             default: { label: t('agentInput.model.default') },
                                             adaptiveUsage: { label: t('agentInput.model.adaptiveUsage') },
@@ -637,7 +637,7 @@ export const AgentInput = React.memo(React.forwardRef<MultiTextInputHandle, Agen
                                         };
                                         const config = modelConfig[model as keyof typeof modelConfig];
                                         if (!config) return null;
-                                        const isSelected = props.modelMode === model || (isCodex && model === 'gpt-5-codex-high' && !props.modelMode) || (!isCodex && model === 'default' && !props.modelMode);
+                                        const isSelected = props.modelMode === model || (isCodex && model === 'gpt-5.1-codex-max-high' && !props.modelMode) || (!isCodex && model === 'default' && !props.modelMode);
 
                                         return (
                                             <Pressable
