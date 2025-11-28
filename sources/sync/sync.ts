@@ -254,7 +254,7 @@ class Sync {
                 fallbackModel = null;
                 break;
             case 'adaptiveUsage':
-                model = 'claude-opus-4-1-20250805';
+                model = 'claude-opus-4-5-20251101';
                 fallbackModel = 'claude-sonnet-4-5-20250929';
                 break;
             case 'sonnet':
@@ -262,7 +262,7 @@ class Sync {
                 fallbackModel = null;
                 break;
             case 'opus':
-                model = 'claude-opus-4-1-20250805';
+                model = 'claude-opus-4-5-20251101';
                 fallbackModel = null;
                 break;
             default:

@@ -1,6 +1,17 @@
 {
   "entries": [
     {
+      "version": 5,
+      "date": "2025-11-28",
+      "summary": "This update brings Claude Opus 4.5 support and establishes an independent CLI package for more flexible version management.",
+      "changes": [
+        "Upgraded Claude Opus model to version 4.5 for improved coding and agentic capabilities",
+        "Migrated CLI package to @yongkangc/happy-coder for independent version control",
+        "Updated Claude Code dependency to version 2.0.55 with latest features and fixes"
+      ],
+      "rawMarkdown": "## Version 5 - 2025-11-28\n\n\nThis update brings Claude Opus 4.5 support and establishes an independent CLI package for more flexible version management.\n\n- Upgraded Claude Opus model to version 4.5 for improved coding and agentic capabilities\n- Migrated CLI package to @yongkangc/happy-coder for independent version control\n- Updated Claude Code dependency to version 2.0.55 with latest features and fixes"
+    },
+    {
       "version": 4,
       "date": "2025-09-12",
       "summary": "This release revolutionizes remote development with Codex integration and Daemon Mode, enabling instant AI assistance from anywhere. Start coding sessions with a single tap while maintaining complete control over your development environment.",
@@ -53,5 +64,5 @@
       "rawMarkdown": "## Version 1 - 2025-05-12\n\n\nWelcome to Happy - your secure, encrypted mobile companion for Claude Code. This inaugural release establishes the foundation for private, powerful AI interactions on the go.\n\n- Implemented end-to-end encrypted session management ensuring complete privacy\n- Integrated intelligent voice assistant with natural conversation capabilities\n- Added experimental file manager with syntax highlighting and tree navigation\n- Built seamless real-time synchronization across all your devices\n- Established native support for iOS, Android, and responsive web interfaces"
     }
   ],
-  "latestVersion": 4
+  "latestVersion": 5
 }

@@ -1,5 +1,13 @@
 # Changelog
 
+## Version 5 - 2025-11-28
+
+This update brings Claude Opus 4.5 support and establishes an independent CLI package for more flexible version management.
+
+- Upgraded Claude Opus model to version 4.5 for improved coding and agentic capabilities
+- Migrated CLI package to @yongkangc/happy-coder for independent version control
+- Updated Claude Code dependency to version 2.0.55 with latest features and fixes
+
 ## Version 4 - 2025-09-12
 
 This release revolutionizes remote development with Codex integration and Daemon Mode, enabling instant AI assistance from anywhere. Start coding sessions with a single tap while maintaining complete control over your development environment.
