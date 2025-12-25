@@ -212,6 +212,7 @@ export const en = {
         contactSupport: 'Contact support if the problem persists',
         sessionNotFound: 'Session not found',
         voiceSessionFailed: 'Failed to start voice session',
+        voiceServiceUnavailable: 'Voice service is temporarily unavailable',
         oauthInitializationFailed: 'Failed to initialize OAuth flow',
         tokenStorageFailed: 'Failed to store authentication tokens',
         oauthStateMismatch: 'Security validation failed. Please try again',
@@ -390,13 +391,11 @@ export const en = {
         agent: {
             claude: 'Claude',
             codex: 'Codex',
+            gemini: 'Gemini',
         },
         model: {
             title: 'MODEL',
-            default: 'Use CLI settings',
-            adaptiveUsage: 'Opus up to 50% usage, then Sonnet',
-            sonnet: 'Sonnet',
-            opus: 'Opus',
+            configureInCli: 'Configure models in CLI settings',
         },
         codexPermissionMode: {
             title: 'CODEX PERMISSION MODE',
@@ -408,15 +407,15 @@ export const en = {
             badgeSafeYolo: 'Safe YOLO',
             badgeYolo: 'YOLO',
         },
-        codexModel: {
-            title: 'CODEX MODEL',
-            gpt51CodexMaxXhigh: 'GPT-5.1 Codex Max (Extra High)',
-            gpt51CodexMaxHigh: 'GPT-5.1 Codex Max (High)',
-            gpt51CodexMaxMedium: 'GPT-5.1 Codex Max (Medium)',
-            gpt51CodexHigh: 'GPT-5.1 Codex (High)',
-            gpt51CodexMedium: 'GPT-5.1 Codex (Medium)',
-            gpt51CodexLow: 'GPT-5.1 Codex (Low)',
-            gpt51CodexMini: 'GPT-5.1 Codex Mini',
+        geminiPermissionMode: {
+            title: 'GEMINI PERMISSION MODE',
+            default: 'Default',
+            acceptEdits: 'Accept Edits',
+            plan: 'Plan Mode',
+            bypassPermissions: 'Yolo Mode',
+            badgeAcceptAllEdits: 'Accept All Edits',
+            badgeBypassAllPermissions: 'Bypass All Permissions',
+            badgePlanMode: 'Plan Mode',
         },
         context: {
             remaining: ({ percent }: { percent: number }) => `${percent}% left`,

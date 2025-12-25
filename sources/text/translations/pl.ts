@@ -223,6 +223,7 @@ export const pl: TranslationStructure = {
         contactSupport: 'Skontaktuj się z pomocą techniczną, jeśli problem będzie się powtarzał',
         sessionNotFound: 'Sesja nie została znaleziona',
         voiceSessionFailed: 'Nie udało się uruchomić sesji głosowej',
+        voiceServiceUnavailable: 'Usługa głosowa jest tymczasowo niedostępna',
         oauthInitializationFailed: 'Nie udało się zainicjować przepływu OAuth',
         tokenStorageFailed: 'Nie udało się zapisać tokenów uwierzytelniania',
         oauthStateMismatch: 'Weryfikacja bezpieczeństwa nie powiodła się. Spróbuj ponownie',
@@ -400,13 +401,11 @@ export const pl: TranslationStructure = {
         agent: {
             claude: 'Claude',
             codex: 'Codex',
+            gemini: 'Gemini',
         },
         model: {
             title: 'MODEL',
-            default: 'Użyj ustawień CLI',
-            adaptiveUsage: 'Opus do 50% użycia, potem Sonnet',
-            sonnet: 'Sonnet',
-            opus: 'Opus',
+            configureInCli: 'Skonfiguruj modele w ustawieniach CLI',
         },
         codexPermissionMode: {
             title: 'TRYB UPRAWNIEŃ CODEX',
@@ -418,15 +417,15 @@ export const pl: TranslationStructure = {
             badgeSafeYolo: 'Safe YOLO',
             badgeYolo: 'YOLO',
         },
-        codexModel: {
-            title: 'MODEL CODEX',
-            gpt51CodexMaxXhigh: 'GPT-5.1 Codex Max (Ekstra Wysoki)',
-            gpt51CodexMaxHigh: 'GPT-5.1 Codex Max (Wysoki)',
-            gpt51CodexMaxMedium: 'GPT-5.1 Codex Max (Średni)',
-            gpt51CodexHigh: 'GPT-5.1 Codex (Wysoki)',
-            gpt51CodexMedium: 'GPT-5.1 Codex (Średni)',
-            gpt51CodexLow: 'GPT-5.1 Codex (Niski)',
-            gpt51CodexMini: 'GPT-5.1 Codex Mini',
+        geminiPermissionMode: {
+            title: 'TRYB UPRAWNIEŃ',
+            default: 'Domyślny',
+            acceptEdits: 'Akceptuj edycje',
+            plan: 'Tryb planowania',
+            bypassPermissions: 'Tryb YOLO',
+            badgeAcceptAllEdits: 'Akceptuj wszystkie edycje',
+            badgeBypassAllPermissions: 'Omiń wszystkie uprawnienia',
+            badgePlanMode: 'Tryb planowania',
         },
         context: {
             remaining: ({ percent }: { percent: number }) => `Pozostało ${percent}%`,

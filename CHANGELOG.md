@@ -1,12 +1,13 @@
 # Changelog
 
-## Version 5 - 2025-11-28
+## Version 5 - 2025-12-22
 
-This update brings Claude Opus 4.5 support and establishes an independent CLI package for more flexible version management.
+This release expands AI agent support and refines the voice experience, while improving markdown rendering for a better chat experience.
 
-- Upgraded Claude Opus model to version 4.5 for improved coding and agentic capabilities
-- Migrated CLI package to @yongkangc/happy-coder for independent version control
-- Updated Claude Code dependency to version 2.0.55 with latest features and fixes
+- We are working on adding Gemini support using ACP and hopefully fixing codex stability issues using the same approach soon! Stay tuned.
+- Removed model configurations from agents. We were not able to keep up with the models so for now we are removing the configuration from the mobile app. You can still configure it through your CLIs, happy will simply use defaults.
+- Elevenlabs ... is epxensive. Voice conversations will soon require a subscription after 3 free trials - we'll soon allow connecting your own ElevenLabs agent if you want to manage your own spendings.
+- Improved markdown table rendering in chat - no more ASCII pipes `|--|`, actual formatted tables (layout still needs work, but much better!)
 
 ## Version 4 - 2025-09-12
 

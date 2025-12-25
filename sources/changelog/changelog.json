@@ -2,14 +2,15 @@
   "entries": [
     {
       "version": 5,
-      "date": "2025-11-28",
-      "summary": "This update brings Claude Opus 4.5 support and establishes an independent CLI package for more flexible version management.",
+      "date": "2025-12-22",
+      "summary": "This release expands AI agent support and refines the voice experience, while improving markdown rendering for a better chat experience.",
       "changes": [
-        "Upgraded Claude Opus model to version 4.5 for improved coding and agentic capabilities",
-        "Migrated CLI package to @yongkangc/happy-coder for independent version control",
-        "Updated Claude Code dependency to version 2.0.55 with latest features and fixes"
+        "Added experimental Gemini agent support - still early and rough around the edges, but functional for those who want to try it",
+        "Voice conversations now require a subscription after 3 free trials - we'll soon allow connecting your own ElevenLabs agent for unlimited usage",
+        "Improved markdown table rendering in chat - no more ASCII pipes `|--|`, actual formatted tables (layout still needs work, but much better!)",
+        "CLI is being actively developed to support more agents: Gemini first, then Codex stability improvements, with OpenCode support to follow"
       ],
-      "rawMarkdown": "## Version 5 - 2025-11-28\n\n\nThis update brings Claude Opus 4.5 support and establishes an independent CLI package for more flexible version management.\n\n- Upgraded Claude Opus model to version 4.5 for improved coding and agentic capabilities\n- Migrated CLI package to @yongkangc/happy-coder for independent version control\n- Updated Claude Code dependency to version 2.0.55 with latest features and fixes"
+      "rawMarkdown": "## Version 5 - 2025-12-22\n\n\nThis release expands AI agent support and refines the voice experience, while improving markdown rendering for a better chat experience.\n\n- Added experimental Gemini agent support - still early and rough around the edges, but functional for those who want to try it\n- Voice conversations now require a subscription after 3 free trials - we'll soon allow connecting your own ElevenLabs agent for unlimited usage\n- Improved markdown table rendering in chat - no more ASCII pipes `|--|`, actual formatted tables (layout still needs work, but much better!)\n- CLI is being actively developed to support more agents: Gemini first, then Codex stability improvements, with OpenCode support to follow"
     },
     {
       "version": 4,

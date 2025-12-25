@@ -195,6 +195,7 @@ export const ru: TranslationStructure = {
         contactSupport: 'Если проблема сохранится, обратитесь в поддержку',
         sessionNotFound: 'Сессия не найдена',
         voiceSessionFailed: 'Не удалось запустить голосовую сессию',
+        voiceServiceUnavailable: 'Голосовой сервис временно недоступен',
         oauthInitializationFailed: 'Не удалось инициализировать процесс OAuth',
         tokenStorageFailed: 'Не удалось сохранить токены аутентификации',
         oauthStateMismatch: 'Ошибка проверки безопасности. Попробуйте снова',
@@ -400,13 +401,11 @@ export const ru: TranslationStructure = {
         agent: {
             claude: 'Claude',
             codex: 'Codex',
+            gemini: 'Gemini',
         },
         model: {
             title: 'МОДЕЛЬ',
-            default: 'Использовать настройки CLI',
-            adaptiveUsage: 'Opus до 50% использования, затем Sonnet',
-            sonnet: 'Sonnet',
-            opus: 'Opus',
+            configureInCli: 'Настройте модели в настройках CLI',
         },
         codexPermissionMode: {
             title: 'РЕЖИМ РАЗРЕШЕНИЙ CODEX',
@@ -418,15 +417,15 @@ export const ru: TranslationStructure = {
             badgeSafeYolo: 'Safe YOLO',
             badgeYolo: 'YOLO',
         },
-        codexModel: {
-            title: 'МОДЕЛЬ CODEX',
-            gpt51CodexMaxXhigh: 'GPT-5.1 Codex Max (Экстра Высокая)',
-            gpt51CodexMaxHigh: 'GPT-5.1 Codex Max (Высокая)',
-            gpt51CodexMaxMedium: 'GPT-5.1 Codex Max (Средняя)',
-            gpt51CodexHigh: 'GPT-5.1 Codex (Высокая)',
-            gpt51CodexMedium: 'GPT-5.1 Codex (Средняя)',
-            gpt51CodexLow: 'GPT-5.1 Codex (Низкая)',
-            gpt51CodexMini: 'GPT-5.1 Codex Mini',
+        geminiPermissionMode: {
+            title: 'РЕЖИМ РАЗРЕШЕНИЙ',
+            default: 'По умолчанию',
+            acceptEdits: 'Принимать правки',
+            plan: 'Режим планирования',
+            bypassPermissions: 'YOLO режим',
+            badgeAcceptAllEdits: 'Принимать все правки',
+            badgeBypassAllPermissions: 'Обход всех разрешений',
+            badgePlanMode: 'Режим планирования',
         },
         context: {
             remaining: ({ percent }: { percent: number }) => `Осталось ${percent}%`,
