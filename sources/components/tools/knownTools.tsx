@@ -16,6 +16,7 @@ const ICON_WEB = (size: number = 24, color: string = '#000') => <Ionicons name="
 const ICON_EXIT = (size: number = 24, color: string = '#000') => <Ionicons name="exit-outline" size={size} color={color} />;
 const ICON_TODO = (size: number = 24, color: string = '#000') => <Ionicons name="bulb-outline" size={size} color={color} />;
 const ICON_REASONING = (size: number = 24, color: string = '#000') => <Octicons name="light-bulb" size={size} color={color} />;
+const ICON_QUESTION = (size: number = 24, color: string = '#000') => <Ionicons name="help-circle-outline" size={size} color={color} />;
 
 export const knownTools = {
     'Task': {
@@ -455,8 +456,8 @@ export const knownTools = {
             }
             if (opts.tool.input?.command && Array.isArray(opts.tool.input.command)) {
                 let cmdArray = opts.tool.input.command;
-                // Remove ["bash", "-lc"] prefix if present
-                if (cmdArray.length >= 3 && cmdArray[0] === 'bash' && cmdArray[1] === '-lc') {
+                // Remove shell wrapper prefix if present (bash/zsh with -lc flag)
+                if (cmdArray.length >= 3 && (cmdArray[0] === 'bash' || cmdArray[0] === '/bin/bash' || cmdArray[0] === 'zsh' || cmdArray[0] === '/bin/zsh') && cmdArray[1] === '-lc') {
                     // The actual command is in the third element
                     return cmdArray[2];
                 }
@@ -591,6 +592,42 @@ export const knownTools = {
         },
         extractDescription: (opts: { metadata: Metadata | null, tool: ToolCall }) => {
             return t('tools.desc.showingDiff');
+        }
+    },
+    'AskUserQuestion': {
+        title: (opts: { metadata: Metadata | null, tool: ToolCall }) => {
+            // Use first question header as title if available
+            if (opts.tool.input?.questions && Array.isArray(opts.tool.input.questions) && opts.tool.input.questions.length > 0) {
+                const firstQuestion = opts.tool.input.questions[0];
+                if (firstQuestion.header) {
+                    return firstQuestion.header;
+                }
+            }
+            return t('tools.names.question');
+        },
+        icon: ICON_QUESTION,
+        minimal: false,  // Always show expanded to display options
+        noStatus: true,
+        input: z.object({
+            questions: z.array(z.object({
+                question: z.string().describe('The question to ask'),
+                header: z.string().describe('Short label for the question'),
+                options: z.array(z.object({
+                    label: z.string().describe('Option label'),
+                    description: z.string().describe('Option description')
+                })).describe('Available choices'),
+                multiSelect: z.boolean().describe('Allow multiple selections')
+            })).describe('Questions to ask the user')
+        }).partial().loose(),
+        extractSubtitle: (opts: { metadata: Metadata | null, tool: ToolCall }) => {
+            if (opts.tool.input?.questions && Array.isArray(opts.tool.input.questions)) {
+                const count = opts.tool.input.questions.length;
+                if (count === 1) {
+                    return opts.tool.input.questions[0].question;
+                }
+                return t('tools.askUserQuestion.multipleQuestions', { count });
+            }
+            return null;
         }
     }
 } satisfies Record<string, {
